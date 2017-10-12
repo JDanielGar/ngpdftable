@@ -39,16 +39,21 @@ export class PdfTable {
                 this.options.size[0] * column.proportion,
                 20)
                 for (const row of column.content) {
-                    positions[1] += 20;
-                    this.pdf.text(positions[0] + 5,
-                            positions[1] + 10,
-                            row);
-                    this.pdf.rect(positions[0],
-                            positions[1],
-                            this.options.size[0] * column.proportion,
-                            20);
+                    if (Array.isArray(row)) {
+                        console.log('Hey')
+                    } else {
+                        positions[1] += 20;
+                        this.pdf.text(positions[0] + 5,
+                                positions[1] + 10,
+                                row);
+                        this.pdf.rect(positions[0],
+                                positions[1],
+                                this.options.size[0] * column.proportion,
+                                20);
+                    }
                 }
             positions[0] += this.options.size[0] * column.proportion;
+            positions[1] = 20;
         }
     }
     // private getProportion(column, items, width): Float32Array{

@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
       'header': 'Diseño',
       'content': [
         'Arquitectonico',
-        'Diseño de Espacios',
+        ['Diseño de Espacios',
+        'Diseño Industrial',
+        'Diseño Gráfico']
       ],
       'proportion': 0.8
     },
@@ -32,7 +34,7 @@ export class AppComponent implements OnInit {
         '23',
         '43',
       ],
-      'proportion': 0.1
+      'proportion': 0.2
     }
   ]
 
