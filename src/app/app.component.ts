@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
     {
       'header': 'Item',
       'content': [
-      '1'
+      '1',
+      '2'
       ],
       'proportion': 0.1
     },
