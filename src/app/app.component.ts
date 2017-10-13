@@ -19,29 +19,43 @@ export class AppComponent implements OnInit {
       'proportion': 0.1
     },
     {
-      'header': 'Diseño',
+      'header': 'Palabra',
       'content': [
-        'Arquitectonico',
-        ['Diseño de Espacios',
-        'Diseño Industrial',
-        'Diseño Gráfico']
+        ['Hola',
+        'Chao',
+        ],
+        ['Perra',
+        'Zorra',
+        'Maldito',
+        'Xupelo',
+        ]
       ],
-      'proportion': 0.8
+      'proportion': 0.7
     },
     {
       'header': 'Puntaje',
       'content': [
-        '23',
-        '43',
+        'Iniciacion',
+        'Insultos'
       ],
-      'proportion': 0.2
+      'proportion': 0.1
+    },
+    {
+      'header': 'Usados',
+      'content': [
+        ['20', '33'],
+        ['  ', '3', '1', '6'],
+      ],
+      'proportion': 0.1
     }
   ]
 
   public options = {
-    'size': [500, 300],
-    'position': [50, 10],
-    'font_size': 10
+    'size': [500, 500],
+    'position': [20, 20],
+    'font_size': 10,
+    'header_height': 20,
+    'text_margin': [10, 10]
   }
 
   ngOnInit() {
