@@ -16,7 +16,11 @@ export class AppComponent implements OnInit {
       '1',
       '2'
       ],
-      'proportion': 0.1
+      'proportion': 0.1,
+      'table':{
+        'text_color': [0, 0, 0],
+        'fill_color': [249, 249, 249] 
+      }
     },
     {
       'header': 'Palabra',
@@ -30,7 +34,11 @@ export class AppComponent implements OnInit {
         'Xupelo',
         ]
       ],
-      'proportion': 0.7
+      'proportion': 0.7,
+      'table':{
+        'text_color': [0, 0, 0],
+        'fill_color': [255, 255, 255] 
+      }
     },
     {
       'header': 'Puntaje',
@@ -38,7 +46,11 @@ export class AppComponent implements OnInit {
         'Iniciacion',
         'Insultos'
       ],
-      'proportion': 0.1
+      'proportion': 0.1,
+      'table':{
+        'text_color': [0, 0, 0],
+        'fill_color': [255, 255, 255] 
+      }
     },
     {
       'header': 'Usados',
@@ -46,7 +58,11 @@ export class AppComponent implements OnInit {
         ['20', '33'],
         ['  ', '3', '1', '6'],
       ],
-      'proportion': 0.1
+      'proportion': 0.1,
+      'table':{
+        'text_color': [0, 0, 0],
+        'fill_color': [255, 255, 255]         
+      }
     }
   ]
 
@@ -54,8 +70,16 @@ export class AppComponent implements OnInit {
     'size': [500, 500],
     'position': [20, 20],
     'font_size': 10,
-    'header_height': 20,
-    'text_margin': [10, 10]
+    'border_color': [221, 221, 221],
+    'header': {
+      'color': [255, 255, 255],
+      'height': 20,
+      'text_color': [30, 107, 184]
+    },
+    'text': {
+      'color': [0, 0, 0],
+      'margin': [10, 10]
+    }
   }
 
   ngOnInit() {
