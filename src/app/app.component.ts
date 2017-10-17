@@ -14,24 +14,30 @@ export class AppComponent implements OnInit {
     {
       'content': 'Cuotas',
       'text_color': [30, 107, 184],
-      'fill_color': [0, 255, 255],
+      'fill_color': [255, 255, 255],
       'draw_color': [221, 221, 221],
       'text_offset': [10, 10],
-      'x_proportion': 0.4,
+      'font_size': 10,
+      'x_proportion': 0.08,
       'y_proportion': 0.1,
       'direction': 'x'
     },
     {
       'content': 'Concepto',   
-      'x_proportion': 0.2,
-      'y_proportion': 0.1,
-      
+      'x_proportion': 0.20,      
     },
     {
       'content': 'Fecha',
-      'x_proportion': 0.2,
-      'y_proportion': 0.1,
-      
+    },
+    {
+      'content': 'Capital',
+    },
+    {
+      'content': 'Interés',
+    },
+    {
+      'content': 'Total',
+      'x_proportion': 0.12,
     }
   ];
 

@@ -7,6 +7,7 @@ export class PDFComponent {
     // color_herarchy = [fill_color: [], text_color: [], draw_color: []]
     private color_herarchy: any [] = [0, 0, 0];
     private text_offset_herarchy: any [] = [0, 0];
+    private proportions_herarchy: any [] = [0, 0]
 
 
     constructor (private components: any[]) {
@@ -24,13 +25,42 @@ export class PDFComponent {
     public setRect (position, size, component) {
         this.fillColor(component);
         this.drawColor(component);
-        this.pdf.rect(
-            position[0]+this.pointer[0],
-            position[1]+this.pointer[1],
-            size[0]*component.x_proportion,
-            size[1]*component.y_proportion,
-            'FD'
-        );
+        if ('x_proportion' in component && 'y_proportion' in component) {
+            this.pdf.rect(
+                position[0]+this.pointer[0],
+                position[1]+this.pointer[1],
+                size[0]*component.x_proportion,
+                size[1]*component.y_proportion,
+                'FD'
+            );
+            this.proportions_herarchy = [component.x_proportion, component.y_proportion]
+        } else if ('x_proportion' in component){
+            this.pdf.rect(
+                position[0]+this.pointer[0],
+                position[1]+this.pointer[1],
+                size[0]*component.x_proportion,
+                size[1]*this.proportions_herarchy[1],
+                'FD'
+            );
+            this.proportions_herarchy[0] = component.x_proportion;
+        } else if ('y_proportion' in component){
+            this.pdf.rect(
+                position[0]+this.pointer[0],
+                position[1]+this.pointer[1],
+                size[0]*this.proportions_herarchy[0],
+                size[1]*component.y_proportion,
+                'FD'
+            );
+            this.proportions_herarchy[1] = component.y_proportion;
+        } else {
+            this.pdf.rect(
+                position[0]+this.pointer[0],
+                position[1]+this.pointer[1],
+                size[0]*this.proportions_herarchy[0],
+                size[1]*this.proportions_herarchy[1],
+                'FD'
+            );
+        }
     }
     public setContent(position, component){
         this.textColor(component);        
