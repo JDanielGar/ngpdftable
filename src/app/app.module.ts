@@ -12,6 +12,9 @@ import { PDFTableComponent } from './components/pdfcomponent/pdf.component';
   imports: [
     BrowserModule,
   ],
+  exports: [
+    PDFTableComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
