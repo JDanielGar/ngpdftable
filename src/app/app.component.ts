@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfTable } from './pdfTable/table-class'
+import { PDFComponent } from './pdfTable/table-components'
 
 @Component({
   selector: 'app-root',
@@ -9,84 +10,37 @@ import { PdfTable } from './pdfTable/table-class'
 export class AppComponent implements OnInit {
 
   public pdf: any;
-  public data = [
+  public component: any[] = [
     {
-      'header': 'Item',
-      'content': [
-      '1',
-      '2'
-      ],
-      'proportion': 0.1,
-      'table':{
-        'text_color': [0, 0, 0],
-        'fill_color': [249, 249, 249] 
-      }
+      'content': 'Cuotas',
+      'text_color': [30, 107, 184],
+      'fill_color': [0, 255, 255],
+      'draw_color': [221, 221, 221],
+      'text_offset': [10, 10],
+      'x_proportion': 0.4,
+      'y_proportion': 0.1,
+      'direction': 'x'
     },
     {
-      'header': 'Palabra',
-      'content': [
-        ['Hola',
-        'Chao',
-        ],
-        ['Perra',
-        'Zorra',
-        'Maldito',
-        'Xupelo',
-        ]
-      ],
-      'proportion': 0.7,
-      'table':{
-        'text_color': [0, 0, 0],
-        'fill_color': [255, 255, 255] 
-      }
+      'content': 'Concepto',   
+      'x_proportion': 0.2,
+      'y_proportion': 0.1,
+      
     },
     {
-      'header': 'Puntaje',
-      'content': [
-        'Iniciacion',
-        'Insultos'
-      ],
-      'proportion': 0.1,
-      'table':{
-        'text_color': [0, 0, 0],
-        'fill_color': [255, 255, 255] 
-      }
-    },
-    {
-      'header': 'Usados',
-      'content': [
-        ['20', '33'],
-        ['  ', '3', '1', '6'],
-      ],
-      'proportion': 0.1,
-      'table':{
-        'text_color': [0, 0, 0],
-        'fill_color': [255, 255, 255]         
-      }
+      'content': 'Fecha',
+      'x_proportion': 0.2,
+      'y_proportion': 0.1,
+      
     }
-  ]
-
-  public options = {
-    'size': [500, 500],
-    'position': [20, 20],
-    'font_size': 10,
-    'border_color': [221, 221, 221],
-    'header': {
-      'color': [255, 255, 255],
-      'height': 20,
-      'text_color': [30, 107, 184]
-    },
-    'text': {
-      'color': [0, 0, 0],
-      'margin': [10, 10]
-    }
-  }
+  ];
 
   ngOnInit() {
-    this.pdf = new PdfTable(this.options, this.data)
+    this.pdf = new PDFComponent(this.component);
+    // Position, Size
+    this.pdf.setTable([0, 0], [595, 842])
   }
-
   public downloadPDF() {
-    this.pdf.downloadPDF('puntajes');
+    this.pdf.downloadPDF('PDFComponent');
   }
 }
