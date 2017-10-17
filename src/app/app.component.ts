@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { PdfTable } from './pdfTable/table-class'
+import { Component } from '@angular/core';
 import { PDFComponent } from './pdfTable/table-components'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  // tslint:disable-next-line:component-selector
+  selector: 'ng-pdftable',
+  templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
-
-  public pdf: any;
+export class AppComponent {
   public component: any[] = [
     {
       'content': 'Cuotas',
@@ -23,9 +20,8 @@ export class AppComponent implements OnInit {
       'direction': 'x'
     },
     {
-      'content': 'Concepto',   
-      'x_proportion': 0.20,
-      
+      'content': 'Concepto',
+      'x_proportion': 0.20
     },
     {
       'content': 'Fecha',
@@ -44,13 +40,4 @@ export class AppComponent implements OnInit {
       'x_proportion': 0.12,
     }
   ];
-
-  ngOnInit() {
-    this.pdf = new PDFComponent(this.component);
-    // Position, Size
-    this.pdf.setTable([0, 0], [595, 842])
-  }
-  public downloadPDF() {
-    this.pdf.downloadPDF('PDFComponent');
-  }
 }
