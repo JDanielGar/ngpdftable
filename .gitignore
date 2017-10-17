@@ -26,3 +26,13 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+
+\.ng_build/bundles/
+
+\.ng_build/ts/e2e/
+
+\.ng_build/ts/
+
+\.ng_build/jspdf-table/
+
+dist/
