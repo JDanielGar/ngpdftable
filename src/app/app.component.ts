@@ -19,21 +19,25 @@ export class AppComponent implements OnInit {
       'text_offset': [10, 10],
       'font_size': 10,
       'x_proportion': 0.08,
-      'y_proportion': 0.1,
+      'y_proportion': 0.06,
       'direction': 'x'
     },
     {
       'content': 'Concepto',   
-      'x_proportion': 0.20,      
+      'x_proportion': 0.20,
+      
     },
     {
       'content': 'Fecha',
+      'x_proportion': 0.20,
     },
     {
       'content': 'Capital',
+      'x_proportion': 0.20,
     },
     {
       'content': 'Interés',
+      'x_proportion': 0.20,
     },
     {
       'content': 'Total',

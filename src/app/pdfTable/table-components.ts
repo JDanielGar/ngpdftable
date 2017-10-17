@@ -32,8 +32,8 @@ export class PDFComponent {
                 size[0]*component.x_proportion,
                 size[1]*component.y_proportion,
                 'FD'
-            );
-            this.proportions_herarchy = [component.x_proportion, component.y_proportion]
+            );            
+            this.proportions_herarchy = [component.x_proportion, component.y_proportion];
         } else if ('x_proportion' in component){
             this.pdf.rect(
                 position[0]+this.pointer[0],
