@@ -8,11 +8,12 @@ import { PDFComponent } from '../../pdfTable/table-components';
 })
 export class PDFTableComponent implements OnInit {
     @Input('component') component: any[];
+    @Input('dimensions') dimensions: any[];
 
     private pdf: any;
 
     ngOnInit() {
-        this.pdf.setTable([0, 0], [595, 842])
+        this.pdf.setTable()
     }
 
     public downloadPDF() {
